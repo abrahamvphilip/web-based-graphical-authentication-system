@@ -1,9 +1,12 @@
 import React from 'react'
+import "./Home.css"
+
+import Header from '../header/Header'
 
 function Home() {
   return (
-    <div>
-      <h1>This is Home Container component</h1>
+    <div className="container">
+      <Header />
     </div>
   )
 }
