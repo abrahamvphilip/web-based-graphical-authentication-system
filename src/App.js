@@ -14,7 +14,8 @@ function App() {
         color='58,12,163'
         outerAlpha={0.2}
         innerScale={0.7}
-        outerScale={3}
+        outerScale={2}
+        trailingSpeed={8}
       />
       <Home />
     </>
