@@ -13,16 +13,16 @@ function Header() {
         </div>
       </div>
       <main className="main-nav">
-        <div className="register">
-          Register
+        <div className="register-container">
+          <h1 className="register">Register</h1>
         </div>
-        <div className="login">
-          Login
+        <div className="login-container">
+          <h1 className="login">Login</h1>
         </div>
       </main>
       <div className="bottom">
         <div className="creator-detail">
-          A project by Khushi <br /> and Philip
+          <p className="creator">A project by Khushi <br /> and Philip</p>
         </div>
       </div>
     </div>

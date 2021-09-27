@@ -10,19 +10,29 @@
 .main-nav {
   margin-top: 5rem;
   margin-bottom: 5rem;
-  font-size: 5rem;
   font-weight: 300;
+  font-size: 5rem;
 }
 
-.register {
+.register-container, .login-container{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   border-top: 2px solid #cdcdcd;
   border-bottom: 2px solid #cdcdcd;
 }
 
-.login {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 2px solid #cdcdcd;
+.login-container {
+  border-top: none;
+}
+
+.register, .login {
+  font-size: 5rem;
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+.creator {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
