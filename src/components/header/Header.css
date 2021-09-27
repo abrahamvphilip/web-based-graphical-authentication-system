@@ -29,6 +29,17 @@
   font-size: 5rem;
   line-height: 1.25;
   font-weight: 300;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 300ms ease-out;
+}
+
+.register:hover {
+  color: #1a759f;
+}
+.login:hover {
+  color: #40916c;
 }
 
 .creator {

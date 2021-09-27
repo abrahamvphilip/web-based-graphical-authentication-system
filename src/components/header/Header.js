@@ -14,10 +14,10 @@ function Header() {
       </div>
       <main className="main-nav">
         <div className="register-container">
-          <h1 className="register">Register</h1>
+          <button className="register">Register</button>
         </div>
         <div className="login-container">
-          <h1 className="login">Login</h1>
+          <button className="login">Login</button>
         </div>
       </main>
       <div className="bottom">
