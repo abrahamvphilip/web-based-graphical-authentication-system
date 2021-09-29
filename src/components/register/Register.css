@@ -1,0 +1,49 @@
+.top {
+  display: flex;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  border-bottom: 1px solid #000;
+  font-size: 1.5rem;
+  width: 30rem;
+  outline: none;
+  margin-top: 2rem;
+}
+
+.register:first-child{
+  margin-top: none;
+}
+
+::placeholder {
+  color: #000;
+  opacity: 1;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.auth-text {
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-top: 7.5rem;
+}
