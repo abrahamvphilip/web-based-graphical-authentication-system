@@ -1,4 +1,5 @@
 import React from 'react'
+import Uploader from '../image-preview/Uploader'
 import './Register.css'
 
 function Register() {
@@ -21,12 +22,16 @@ function Register() {
               <input type="text" placeholder="Name" />
               <input type="text" placeholder="Username" />
               <input type="email" placeholder="Email" />
-              <div className="auth-image-upload">
-                {/* Uploader code goes here */}
-              </div>
             </form>
           </div>
         </div>
+
+        {/* Image Upload and Preview -> */}
+
+        <div className="auth-image-upload">
+          <Uploader />
+        </div>
+        
         <div className="bottom">
           <div className="creator-detail">
             <p className="creator">A project by Khushi <br /> and Philip</p>
