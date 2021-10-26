@@ -4,6 +4,7 @@ import './App.css';
 import AnimatedCursor from "react-animated-cursor"
 
 import Home from './components/home-container/Home'
+// import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (

@@ -1,8 +1,31 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import Uploader from '../image-preview/Uploader'
 import './Register.css'
+// import {useAuth} from '../../contexts/AuthContext'
 
 function Register() {
+
+  const nameRef = useRef()
+  const usernameRef = useRef()
+  const emailRef = useRef()
+
+  // const {signup, currentUser} = useAuth()
+
+  // const [error, setError] = useState('')
+  // const [loading, setLoading] = useState(false)
+
+  // async function handleSubmit(e) {
+  //   e.preventDefault()
+
+  //   // create passwordRef, assign values and replace below in signup()
+  //   try {
+  //     setError('')
+  //     await signup(emailRef.current.value, usernameRef.current.value)  
+  //   } catch {
+  //     setError('Failed to register the user')
+  //   }
+  // }
+
   return (
     <div className="auth-register">
       <div className="top">
@@ -19,9 +42,9 @@ function Register() {
           </div>
           <div className="auth-form">
             <form>
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Username" />
-              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Name" ref={nameRef}/>
+              <input type="text" placeholder="Username" ref={usernameRef}/>
+              <input type="email" placeholder="Email" ref={emailRef}/>
             </form>
           </div>
         </div>

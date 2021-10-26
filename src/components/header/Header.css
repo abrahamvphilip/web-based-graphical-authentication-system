@@ -1,49 +1,51 @@
 .top {
-  display: flex;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .main-nav {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  font-weight: 300;
-  font-size: 5rem;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	font-weight: 300;
+	font-size: 5rem;
 }
 
-.register-container, .login-container{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  border-top: 2px solid #cdcdcd;
-  border-bottom: 2px solid #cdcdcd;
+.register-container,
+.login-container {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	border-top: 2px solid #cdcdcd;
+	border-bottom: 2px solid #cdcdcd;
 }
 
 .login-container {
-  border-top: none;
+	border-top: none;
 }
 
-.register, .login {
-  font-size: 5rem;
-  line-height: 1.25;
-  font-weight: 300;
-  background: none;
-  border: none;
-  outline: none;
-  transition: 300ms ease-out;
+.register,
+.login {
+	font-size: 5rem;
+	line-height: 1.25;
+	font-weight: 300;
+	background: none;
+	border: none;
+	outline: none;
+	transition: 300ms ease-out;
 }
 
 .register:hover {
-  color: #1a759f;
+	color: #1a759f;
 }
 .login:hover {
-  color: #40916c;
+	color: #40916c;
 }
 
 .creator {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5;
 }

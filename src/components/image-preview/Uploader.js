@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { Link } from 'react-router-dom'
 import './Uploader.css'
 
 function Uploader() {
@@ -24,7 +25,7 @@ function Uploader() {
       <div className="uploader-info">
         <p className="uploader-info-text">Select upto 4 click-points as your <br /> graphical password</p>
       </div>
-      <form>
+      <form action="/">
         <button 
           className="image-upload-button"
           onClick={(e) => {
@@ -55,6 +56,18 @@ function Uploader() {
           <div className="preview-image-before"></div>
           }
         </div>
+        <button 
+          type="submit"
+          className="register-submit-button"
+        >
+          Register
+        </button>
+        <Link 
+          to="/login"
+          className="gotoLogin-button"
+        >
+          Already have an account? Go to Login
+        </Link>
       </form>
     </div>
   )

@@ -47,3 +47,28 @@ input {
   line-height: 1.25;
   margin-top: 7.5rem;
 }
+
+/* Media queries */
+
+@media (max-width: 768px) {
+	.auth-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .top{
+    font-size: 0.75rem;
+  }
+	.auth-text{
+    font-size: 3.5rem;
+  }
+  input{
+    width: 20rem;
+  }
+}
