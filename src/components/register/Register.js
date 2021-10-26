@@ -52,7 +52,10 @@ function Register() {
         {/* Image Upload and Preview -> */}
 
         <div className="auth-image-upload">
-          <Uploader />
+          <Uploader 
+            buttonText="Register" 
+            gotoButton="Already have an Account? Login"
+          />
         </div>
         
         <div className="bottom">

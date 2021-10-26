@@ -49,3 +49,13 @@
 	font-weight: 500;
 	line-height: 1.5;
 }
+
+@media only screen and (max-width: 768px){
+	.top{
+		font-size: 0.75rem;
+	}
+
+	.register, .login{
+		font-size: 3.5rem;
+	}
+}

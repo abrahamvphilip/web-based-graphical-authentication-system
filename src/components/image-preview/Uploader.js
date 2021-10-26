@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import { Link } from 'react-router-dom'
 import './Uploader.css'
 
-function Uploader() {
+function Uploader({buttonText, gotoButton}) {
 
   const [image, setImage] = useState()
   const [preview, setPreview] = useState()
@@ -60,13 +60,13 @@ function Uploader() {
           type="submit"
           className="register-submit-button"
         >
-          Register
+          {buttonText}
         </button>
         <Link 
-          to="/login"
+          to="/"
           className="gotoLogin-button"
         >
-          Already have an account? Go to Login
+          {gotoButton}
         </Link>
       </form>
     </div>
