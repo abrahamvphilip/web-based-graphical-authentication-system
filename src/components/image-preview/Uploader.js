@@ -6,6 +6,7 @@ function Uploader({buttonText, gotoButton}) {
 
   const [image, setImage] = useState()
   const [preview, setPreview] = useState()
+  const [clicks, setClicks] = useState([])
   const fileInputRef = useRef()
 
   useEffect(() => {
@@ -19,6 +20,35 @@ function Uploader({buttonText, gotoButton}) {
       setPreview(null)
     }
   }, [image])
+
+  // Click Counter ->
+
+   function f(ev){
+    setClicks((prev) => ([...prev,{
+            x: ev.offsetX,
+            y: ev.offsetY,
+       }]
+    ))
+    
+  }
+     
+  useEffect(() => {
+    const preview = document.querySelector("div.preview-image")
+    console.log(preview)
+
+    preview.addEventListener('click', f)
+    localStorage.setItem("offsets", JSON.stringify(clicks))
+    
+    return () => {
+      preview.removeEventListener("click", f)
+    }
+  }, [])
+  
+  useEffect(()=> {
+    localStorage.setItem("offsets", JSON.stringify(clicks))
+    console.log(clicks)
+  }, [clicks])
+
 
   return (
     <div className="uploader-container">
@@ -51,7 +81,7 @@ function Uploader({buttonText, gotoButton}) {
         />
 
         <div className="preview-image">
-          {image ? <img src={preview} alt="" />
+          {image ? <img id="preview-image" src={preview} alt="" />
           :
           <div className="preview-image-before"></div>
           }

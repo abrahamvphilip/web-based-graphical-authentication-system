@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import Uploader from '../image-preview/Uploader'
 import './Register.css'
 // import {useAuth} from '../../contexts/AuthContext'
@@ -8,6 +8,20 @@ function Register() {
   const nameRef = useRef()
   const usernameRef = useRef()
   const emailRef = useRef()
+
+  const [input, setInput] = useState({
+    name: "",
+    username: "",
+    email: "",
+  })
+
+  const handleChange = (ev) => {
+    setInput({
+      ...input,
+      [ev.target.name]: ev.target.value
+    })
+    console.log(input)
+  }
 
   // const {signup, currentUser} = useAuth()
 
@@ -42,9 +56,30 @@ function Register() {
           </div>
           <div className="auth-form">
             <form>
-              <input type="text" placeholder="Name" ref={nameRef}/>
-              <input type="text" placeholder="Username" ref={usernameRef}/>
-              <input type="email" placeholder="Email" ref={emailRef}/>
+              <input 
+                type="text" 
+                placeholder="Name" 
+                ref={nameRef}
+                value={input.name}
+                name="name"
+                onChange={handleChange}
+              />
+              <input 
+                type="text" 
+                placeholder="Username" 
+                ref={usernameRef}
+                value={input.username}
+                name="username"
+                onChange={handleChange}
+              />
+              <input 
+                type="email" 
+                placeholder="Email" 
+                ref={emailRef}
+                value={input.email}
+                name="email"
+                onChange={handleChange}
+              />
             </form>
           </div>
         </div>
