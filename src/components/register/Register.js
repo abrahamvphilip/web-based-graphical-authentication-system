@@ -1,13 +1,8 @@
-import React, {useRef, useState} from 'react'
+import React, {useState} from 'react'
 import Uploader from '../image-preview/Uploader'
 import './Register.css'
-// import {useAuth} from '../../contexts/AuthContext'
 
 function Register() {
-
-  const nameRef = useRef()
-  const usernameRef = useRef()
-  const emailRef = useRef()
 
   const [input, setInput] = useState({
     name: "",
@@ -15,30 +10,33 @@ function Register() {
     email: "",
   })
 
+  const [errors, setErrors] = useState("")
+
   const handleChange = (ev) => {
     setInput({
       ...input,
       [ev.target.name]: ev.target.value
     })
-    console.log(input)
   }
 
-  // const {signup, currentUser} = useAuth()
+  const validateInputs = (inputValues) => {
+    setErrors("")
+    if(!inputValues.name && !inputValues.username && !inputValues.email){
+      setErrors("The above field is required!")
+      alert("Can't submit empty fields! Please fill out the required.")
+    } else {
+      setErrors("")
+      // console.log(input)
+    }
+    return errors
+  }
 
-  // const [error, setError] = useState('')
-  // const [loading, setLoading] = useState(false)
-
-  // async function handleSubmit(e) {
-  //   e.preventDefault()
-
-  //   // create passwordRef, assign values and replace below in signup()
-  //   try {
-  //     setError('')
-  //     await signup(emailRef.current.value, usernameRef.current.value)  
-  //   } catch {
-  //     setError('Failed to register the user')
-  //   }
-  // }
+  const handleClick = (e) => {
+    e.preventDefault()
+    validateInputs(input)
+    
+    console.log("data", input)
+  }
 
   return (
     <div className="auth-register">
@@ -59,27 +57,27 @@ function Register() {
               <input 
                 type="text" 
                 placeholder="Name" 
-                ref={nameRef}
                 value={input.name}
                 name="name"
                 onChange={handleChange}
               />
+              <p style={{color: "red"}}>{errors}</p>
               <input 
                 type="text" 
                 placeholder="Username" 
-                ref={usernameRef}
                 value={input.username}
                 name="username"
                 onChange={handleChange}
               />
+              <p style={{color: "red"}}>{errors}</p>
               <input 
                 type="email" 
                 placeholder="Email" 
-                ref={emailRef}
                 value={input.email}
                 name="email"
                 onChange={handleChange}
               />
+              <p style={{color: "red"}}>{errors}</p>
             </form>
           </div>
         </div>
@@ -90,6 +88,7 @@ function Register() {
           <Uploader 
             buttonText="Register" 
             gotoButton="Already have an Account? Login"
+            onClick={handleClick}
           />
         </div>
         
@@ -103,4 +102,3 @@ function Register() {
 }
 
 export default Register
-

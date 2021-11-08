@@ -2,11 +2,12 @@ import React, {useState, useEffect, useRef} from 'react'
 import { Link } from 'react-router-dom'
 import './Uploader.css'
 
-function Uploader({buttonText, gotoButton}) {
+function Uploader({buttonText, gotoButton, onClick}) {
 
   const [image, setImage] = useState()
   const [preview, setPreview] = useState()
   const [clicks, setClicks] = useState([])
+
   const fileInputRef = useRef()
 
   useEffect(() => {
@@ -34,20 +35,20 @@ function Uploader({buttonText, gotoButton}) {
      
   useEffect(() => {
     const preview = document.querySelector("div.preview-image")
-    console.log(preview)
 
     preview.addEventListener('click', f)
-    localStorage.setItem("offsets", JSON.stringify(clicks))
+    // localStorage.setItem("offsets", JSON.stringify(clicks))
+    // localStorage.clear()
+    // console.log(clicks)
     
     return () => {
       preview.removeEventListener("click", f)
     }
-  }, [])
-  
-  useEffect(()=> {
-    localStorage.setItem("offsets", JSON.stringify(clicks))
-    console.log(clicks)
   }, [clicks])
+  
+  // useEffect(()=> {
+  //   localStorage.setItem("offsets", JSON.stringify(clicks))
+  // }, [clicks])
 
 
   return (
@@ -86,12 +87,15 @@ function Uploader({buttonText, gotoButton}) {
           <div className="preview-image-before"></div>
           }
         </div>
+ 
         <button 
           type="submit"
           className="register-submit-button"
+          onClick={onClick}
         >
           {buttonText}
         </button>
+        
         <Link 
           to="/"
           className="gotoLogin-button"
